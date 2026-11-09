@@ -2,4 +2,6 @@
 *.bak
 *.log
 *.pdf
+pases/
+pase_*.png
 .gemini/
