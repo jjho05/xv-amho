@@ -4,5 +4,6 @@
 *.pdf
 pases/
 pase_*.png
+invitacion_*.png
 *.py
 .gemini/
