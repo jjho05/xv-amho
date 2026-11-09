@@ -1,0 +1,1768 @@
+/* ==========================================================================
+   XV AÑOS - ARGELIA MARGARITA HERNÁNDEZ OLVERA
+   Invitación Digital Interactiva de Alta Gama - Haute Couture Edition
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Great Vibes';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/great-vibes.ttf') format('truetype');
+}
+
+:root {
+  /* Tipografía de Lujo Editorial y Alta Costura */
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-classic: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cinzel', 'Playfair Display', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Paleta Blush Rose & Champagne Imperial */
+  --bg-primary: #fcf8f8;
+  --bg-secondary: #f7eded;
+  --bg-card: rgba(255, 255, 255, 0.94);
+  --bg-card-border: rgba(212, 175, 55, 0.35);
+  
+  --color-primary: #521629;
+  --color-primary-dark: #380d1b;
+  --color-primary-light: #faf0f3;
+  --color-text-main: #2b1820;
+  --color-text-muted: #6e5560;
+  
+  /* Dorado Real y Champagne Metálico */
+  --gold-light: #fbeec8;
+  --gold-main: #c99f3b;
+  --gold-dark: #8c6a1e;
+  --gold-gradient: linear-gradient(135deg, #faebb7 0%, #d4af37 35%, #f3d483 60%, #99751c 100%);
+  --gold-gradient-soft: linear-gradient(135deg, rgba(250, 235, 183, 0.25) 0%, rgba(212, 175, 55, 0.12) 100%);
+  --gold-border-gradient: linear-gradient(135deg, rgba(249, 231, 184, 0.7) 0%, rgba(212, 175, 55, 0.8) 50%, rgba(153, 117, 28, 0.7) 100%);
+
+  /* Sobre 3D y Papelería Fina */
+  --envelope-outer: #edd4db;
+  --envelope-inner-liner: #faf5f7;
+  --envelope-dark: #dfbcc7;
+  --envelope-flap: #f7e2e8;
+  --wax-color-start: #ffd98a;
+  --wax-color-mid: #dfb572;
+  --wax-color-end: #6e4614;
+
+  /* Sombras de Lujo */
+  --shadow-sm: 0 4px 14px rgba(74, 21, 37, 0.06);
+  --shadow-md: 0 12px 32px rgba(74, 21, 37, 0.10);
+  --shadow-lg: 0 24px 60px rgba(74, 21, 37, 0.16);
+  --shadow-gold: 0 10px 28px rgba(184, 134, 54, 0.25);
+}
+
+/* ================== TEMAS DE COLOR ================== */
+body.theme-blush-rose {
+  --bg-primary: #fcf8f8;
+  --bg-secondary: #f7eded;
+  --color-primary: #521629;
+  --color-primary-dark: #380d1b;
+  --color-primary-light: #faf0f3;
+  --envelope-outer: #edd4db;
+}
+
+body.theme-emerald-gold {
+  --bg-primary: #f4f8f5;
+  --bg-secondary: #e6f0e8;
+  --color-primary: #15452d;
+  --color-primary-dark: #0c2b1c;
+  --color-primary-light: #e7f3ec;
+  --envelope-outer: #c9ded0;
+}
+
+body.theme-royal-navy {
+  --bg-primary: #f4f6fb;
+  --bg-secondary: #e7ebf6;
+  --color-primary: #152b4d;
+  --color-primary-dark: #0b1a30;
+  --color-primary-light: #eaf0fb;
+  --envelope-outer: #ccd7eb;
+}
+
+body.theme-lavender {
+  --bg-primary: #faf6fd;
+  --bg-secondary: #f0e6f8;
+  --color-primary: #543168;
+  --color-primary-dark: #351c44;
+  --color-primary-light: #f3ebfa;
+  --envelope-outer: #dfceec;
+}
+
+body.theme-noir-gold {
+  --bg-primary: #121214;
+  --bg-secondary: #1a1a1e;
+  --bg-card: rgba(26, 26, 30, 0.95);
+  --color-primary: #d4af37;
+  --color-primary-dark: #f0d17d;
+  --color-primary-light: #2c2921;
+  --color-text-main: #f5f2eb;
+  --color-text-muted: #aba396;
+  --envelope-outer: #28272c;
+  --bg-card-border: rgba(212, 175, 55, 0.45);
+}
+
+/* Reset y Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Canvas de partículas doradas ambientales */
+#sparkles-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================================================
+   PANTALLA DE ENTRADA: SOBRE DIGITAL 3D REALISTA DE ALTA GAMA
+   ========================================================================== */
+
+body.envelope-locked {
+  overflow: hidden !important;
+  height: 100vh !important;
+  touch-action: none;
+}
+
+.envelope-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: radial-gradient(circle at 50% 45%, #fff6f9 0%, #fae6ed 60%, #f3d4df 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.45s ease;
+  will-change: opacity;
+}
+
+/* Ambient Corner Accents (Acuarelas de Rosas Realistas) */
+.envelope-ambient-decor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+}
+
+.decor-top-left {
+  top: 0;
+  left: 0;
+  width: clamp(125px, 26vw, 185px);
+  opacity: 0.95;
+}
+
+.decor-bottom-right {
+  bottom: 0;
+  right: 0;
+  width: clamp(140px, 30vw, 205px);
+  opacity: 0.95;
+}
+
+.decor-top-right-castle {
+  top: 10px;
+  right: 5px;
+  width: clamp(110px, 25vw, 155px);
+  opacity: 0.92;
+  z-index: 1;
+}
+
+.ambient-castle-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 14px rgba(212, 175, 55, 0.25));
+}
+
+.ambient-roses-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(74, 21, 37, 0.12));
+}
+
+.envelope-screen.fading-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.envelope-screen.opened {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  display: none !important;
+}
+
+/* Cabecera del Sobre */
+.envelope-header {
+  text-align: center;
+  margin-bottom: 1.6rem;
+  position: relative;
+  z-index: 3;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  animation: fadeInDown 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.envelope-screen.opening .envelope-header {
+  animation: none !important;
+  opacity: 0 !important;
+  transform: translateY(-30px) scale(0.96) !important;
+  pointer-events: none !important;
+  transition: opacity 0.35s ease, transform 0.35s ease !important;
+}
+
+.envelope-tiara-icon {
+  width: 176px;
+  height: auto;
+  margin-bottom: 0.6rem;
+  filter: drop-shadow(0 4px 14px rgba(184, 134, 54, 0.35));
+  animation: floatSubtle 4.5s ease-in-out infinite;
+}
+
+.envelope-badge {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #a57c38;
+  margin-bottom: 0.25rem;
+  display: block;
+  font-weight: 600;
+}
+
+.envelope-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 9.5vw, 4.4rem);
+  font-weight: 400;
+  color: #88344e;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+.envelope-lastname {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.4rem, 7.8vw, 3.4rem);
+  color: #88344e;
+  font-weight: 400;
+  line-height: 1.05;
+  margin-top: 0.1rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+.envelope-header-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 0.45rem;
+  color: #c49942;
+}
+
+.header-flourish-line {
+  width: 55px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c49942, transparent);
+}
+
+.header-flourish-heart {
+  font-family: serif;
+  font-size: 1.15rem;
+  color: #c49942;
+  line-height: 1;
+}
+
+/* Contenedor del Sobre 3D */
+.envelope-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: 250px;
+  perspective: 1200px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.envelope-wrapper:hover:not(.opening) {
+  transform: translateY(-5px) scale(1.015);
+}
+
+.envelope-wrapper:active:not(.opening) {
+  transform: scale(0.985);
+}
+
+/* Sombra de contacto realista en la superficie */
+.envelope-ambient-shadow {
+  position: absolute;
+  bottom: -18px;
+  left: 5%;
+  width: 90%;
+  height: 35px;
+  background: radial-gradient(ellipse at center, rgba(74, 21, 37, 0.28) 0%, rgba(74, 21, 37, 0.08) 50%, transparent 75%);
+  filter: blur(8px);
+  border-radius: 50%;
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+
+.envelope-screen.opening .envelope-ambient-shadow {
+  bottom: -25px;
+  transform: scale(1.08);
+  opacity: 0.8;
+}
+
+/* Escenario y Estructura 3D */
+.envelope-3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+/* 1. Base / Espalda del Sobre */
+.envelope-backplate {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #f7e6eb 0%, var(--envelope-outer) 50%, #e2c0ca 100%);
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(74, 21, 37, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Forro interior de seda marfil con filigrana dorada */
+.envelope-inner-lining {
+  position: absolute;
+  inset: 6px;
+  background-color: var(--envelope-inner-liner);
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.22) 1.2px, transparent 1.2px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 235, 240, 0.4) 100%);
+  background-size: 16px 16px, 100% 100%;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 10px rgba(74, 21, 37, 0.08);
+}
+
+/* 2. Tarjeta de Gala Interior (Letter Card con Portada Real) */
+.envelope-card {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  right: 18px;
+  height: 232px;
+  background: #fdf6f8;
+  border-radius: 8px;
+  border: 1.5px solid rgba(212, 175, 55, 0.75);
+  z-index: 4;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(74, 21, 37, 0.16);
+  transform: translateY(0);
+  transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 1.1s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.envelope-card::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 0.8px dashed rgba(212, 175, 55, 0.45);
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.card-tiara {
+  width: 58px;
+  height: auto;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 2px 6px rgba(212, 175, 55, 0.35));
+}
+
+.card-tag {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-dark);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.card-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.3rem;
+  font-weight: 400;
+  color: #88344e;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.card-lastname {
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.card-date {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--gold-dark);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* Desplazamiento cinematográfico al abrirse */
+.envelope-screen.opening .envelope-card {
+  transform: translateY(-175px) scale(1.04);
+  box-shadow: 0 24px 50px rgba(74, 21, 37, 0.28);
+  transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.25s, box-shadow 0.95s ease 0.25s;
+}
+
+/* 3. Bolsillo Frontal (Izquierda, Derecha, Abajo) - z-index: 5 */
+.envelope-pocket {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.pocket-left {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, #f0d5dd 0%, #e2bec8 100%);
+  clip-path: polygon(0 0, 0 100%, 53% 50%);
+  filter: drop-shadow(2px 0 4px rgba(74, 21, 37, 0.06));
+}
+
+.pocket-right {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(250deg, #f0d5dd 0%, #e2bec8 100%);
+  clip-path: polygon(100% 0, 100% 100%, 47% 50%);
+  filter: drop-shadow(-2px 0 4px rgba(74, 21, 37, 0.06));
+}
+
+.pocket-bottom {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #f5dce3 0%, #e8c4cf 60%, #dfbcc7 100%);
+  clip-path: polygon(0 100%, 100% 100%, 50% 46%);
+  filter: drop-shadow(0 -4px 8px rgba(74, 21, 37, 0.10));
+}
+
+.pocket-stitch {
+  position: absolute;
+  inset: 8px;
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.45);
+  border-left: 1px dashed rgba(212, 175, 55, 0.35);
+  border-right: 1px dashed rgba(212, 175, 55, 0.35);
+  border-radius: 0 0 8px 8px;
+  pointer-events: none;
+}
+
+/* 4. Solapa Superior 3D (Flap) - z-index: 6 cuando está cerrada */
+.envelope-flap-3d {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  z-index: 6;
+  transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.75s step-end;
+}
+
+.flap-face-front {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #fcf0f3 0%, var(--envelope-flap) 65%, #ebd1db 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 55%);
+  backface-visibility: hidden;
+  filter: drop-shadow(0 6px 12px rgba(74, 21, 37, 0.16));
+}
+
+.flap-gold-edge {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0 0, 100% 0, 50% 55%);
+  pointer-events: none;
+}
+
+.flap-face-back {
+  position: absolute;
+  inset: 0;
+  background: #faf4f6;
+  background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.22) 1.2px, transparent 1.2px);
+  background-size: 16px 16px;
+  clip-path: polygon(0 0, 100% 0, 50% 55%);
+  transform: rotateX(180deg);
+  backface-visibility: hidden;
+  box-shadow: inset 0 4px 12px rgba(74, 21, 37, 0.10);
+}
+
+.envelope-screen.opening .envelope-flap-3d {
+  transform: rotateX(180deg);
+  z-index: 3;
+}
+
+/* 5. Sello de Lacre Real con Corona Grabada - z-index: 7 */
+.envelope-seal {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 7;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease;
+}
+
+.seal-real-img {
+  width: 90px;
+  height: 90px;
+  display: block;
+  filter: drop-shadow(0 8px 20px rgba(74, 21, 37, 0.32));
+  animation: sealPulse 3.5s infinite ease-in-out;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.3s ease;
+}
+
+.envelope-seal:hover .seal-real-img {
+  transform: scale(1.08) rotate(2deg);
+  filter: drop-shadow(0 14px 30px rgba(74, 21, 37, 0.48)) drop-shadow(0 0 12px rgba(212, 175, 55, 0.55));
+}
+
+.envelope-screen.opening .envelope-seal {
+  transform: translate(-50%, -100%) scale(0.85);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 6. Botón Cartela Barroca: Da click para abrir la invitación ♡ */
+.envelope-cta {
+  margin-top: 1.8rem;
+  text-align: center;
+  position: relative;
+  z-index: 4;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  animation: fadeInUp 1s ease 0.3s;
+  will-change: opacity, transform;
+}
+
+.envelope-screen.opening .envelope-cta {
+  animation: none !important;
+  opacity: 0 !important;
+  transform: translateY(25px) scale(0.96) !important;
+  pointer-events: none !important;
+  transition: opacity 0.35s ease, transform 0.35s ease !important;
+}
+
+.cartouche-open-btn {
+  display: inline-block;
+  position: relative;
+  width: 310px;
+  height: 98px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.35s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cartouche-open-btn:hover {
+  transform: translateY(-3px) scale(1.025);
+  filter: drop-shadow(0 10px 24px rgba(138, 59, 88, 0.28));
+}
+
+.cartouche-open-btn:active {
+  transform: scale(0.985);
+}
+
+.cartouche-svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cartouche-btn-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 14px;
+  font-family: 'Great Vibes', cursive;
+  color: #88344e;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);
+  line-height: 1.15;
+}
+
+.cartouche-btn-line1 {
+  font-size: 24px;
+}
+
+.cartouche-btn-line2 {
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cartouche-btn-heart {
+  font-family: serif;
+  font-size: 22px;
+  color: #88344e;
+}
+
+.cartouche-flourish-bottom {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #c49942;
+  font-size: 16px;
+}
+
+.flourish-line {
+  width: 55px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c49942, transparent);
+}
+
+.flourish-heart {
+  font-family: serif;
+  font-size: 1.1rem;
+  color: #c49942;
+  line-height: 1;
+}
+
+.sparkle-diamond {
+  color: #dfb572;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   INVITACIÓN PRINCIPAL (CONTENIDO DESPLEGADO)
+   ========================================================================== */
+
+.invitation-main {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 6.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.75s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.invitation-main.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Revelado suave al hacer scroll (solo secciones secundarias) */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.75s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hoja de Gala de la Invitación */
+.card-sheet {
+  position: relative;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 4rem 2rem 3rem;
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--bg-card-border);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+/* Marcos ornamentales */
+.ornate-border {
+  position: absolute;
+  inset: 16px;
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.ornate-border::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+}
+
+.corner-decor {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+  z-index: 2;
+}
+.corner-top-left { top: 22px; left: 22px; }
+.corner-top-right { top: 22px; right: 22px; transform: scaleX(-1); }
+.corner-bottom-left { bottom: 22px; left: 22px; transform: scaleY(-1); }
+.corner-bottom-right { bottom: 22px; right: 22px; transform: scale(-1); }
+
+/* ================== SECCIÓN HERO ================== */
+
+.hero-section {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2.8rem;
+}
+
+/* Retrato Real de Portada: La Quinceañera con su Vestido de Gala frente al Castillo */
+.hero-portrait-wrapper {
+  margin: 0 auto 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-portrait-frame {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 140px 140px 18px 18px;
+  overflow: hidden;
+  box-shadow: 
+    0 18px 45px rgba(82, 22, 41, 0.2),
+    0 0 0 1.5px rgba(212, 175, 55, 0.65),
+    0 0 0 4.5px #ffffff,
+    0 0 0 6px rgba(212, 175, 55, 0.4);
+  background: #ffffff;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-portrait-frame:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 
+    0 24px 55px rgba(82, 22, 41, 0.28),
+    0 0 0 1.5px rgba(212, 175, 55, 0.85),
+    0 0 0 4.5px #ffffff,
+    0 0 0 6.5px rgba(212, 175, 55, 0.55);
+}
+
+.hero-portrait-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-date-highlight {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.tiara-hero {
+  width: 96px;
+  height: auto;
+  margin: 0 auto 1.4rem;
+  display: block;
+  filter: drop-shadow(0 6px 16px rgba(212, 175, 55, 0.4));
+  animation: floatSubtle 4.5s ease-in-out infinite;
+}
+
+.hero-tag {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 600;
+}
+
+.hero-title-xv {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6.5vw, 2.7rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.hero-quinceanera-name {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 9.5vw, 4.6rem);
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.05;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-quinceanera-lastname {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 3.2vw, 1.35rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-main);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.hero-quote {
+  font-family: var(--font-classic);
+  font-style: italic;
+  font-size: clamp(1.15rem, 3.2vw, 1.32rem);
+  color: var(--color-text-muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* ================== PADRES Y PADRINOS ================== */
+
+.hosts-section {
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hosts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+@media (min-width: 480px) {
+  .hosts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.host-block {
+  background: var(--gold-gradient-soft);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 16px;
+  padding: 1.4rem 1rem;
+}
+
+.host-role {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.host-names {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+/* ================== CUENTA REGRESIVA ================== */
+
+.countdown-section {
+  text-align: center;
+  margin-bottom: 3.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.section-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.section-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 5.5vw, 2.5rem);
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.6rem;
+}
+
+.countdown-card {
+  min-width: 72px;
+  flex: 1;
+  max-width: 90px;
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 14px;
+  padding: 1rem 0.4rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.countdown-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-main);
+  box-shadow: var(--shadow-gold);
+}
+
+.countdown-number {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.countdown-unit {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+/* Botón Guardar Fecha: Alta Gama */
+.calendar-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #ffffff;
+  border: 1px solid rgba(184, 134, 54, 0.45);
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.8rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.calendar-action-btn:hover {
+  background: var(--gold-gradient-soft);
+  color: var(--color-primary-dark);
+  border-color: var(--gold-main);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+/* ================== UBICACIONES ================== */
+
+.locations-section {
+  margin-bottom: 3.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.location-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+}
+
+@media (min-width: 580px) {
+  .location-cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.location-card {
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 18px;
+  padding: 2.2rem 1.6rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold-main);
+}
+
+.location-icon-wrapper {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.location-type {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.location-name {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.location-time {
+  display: inline-block;
+  background: var(--gold-gradient-soft);
+  color: var(--gold-dark);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 1.1rem;
+  border-radius: 20px;
+  margin-bottom: 0.9rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.location-address {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.4rem;
+  min-height: 44px;
+  line-height: 1.45;
+}
+
+.location-btn-group {
+  display: flex;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+.location-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.location-btn-maps {
+  background: linear-gradient(135deg, #6c233c 0%, #4a1525 100%);
+  color: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.location-btn-maps:hover {
+  background: linear-gradient(135deg, #782743 0%, #521629 100%);
+  box-shadow: 0 5px 15px rgba(74, 21, 37, 0.3);
+  transform: translateY(-2px);
+}
+
+.location-btn-waze {
+  background: #ffffff;
+  color: var(--color-primary);
+  border: 1px solid rgba(184, 134, 54, 0.4);
+}
+
+.location-btn-waze:hover {
+  background: var(--gold-gradient-soft);
+  border-color: var(--gold-main);
+  transform: translateY(-2px);
+}
+
+/* ================== ITINERARIO DEL DÍA ================== */
+
+.itinerary-section {
+  margin-bottom: 3.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline {
+  position: relative;
+  max-width: 490px;
+  margin: 1.8rem auto 0;
+  padding-left: 2.2rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 11px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--gold-main) 0%, rgba(212, 175, 55, 0.25) 100%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.8rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.2rem;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid var(--gold-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+.timeline-dot::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.timeline-content {
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 14px;
+  padding: 1.1rem 1.3rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.timeline-content:hover {
+  transform: translateX(5px);
+  border-color: var(--gold-main);
+}
+
+.timeline-time {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold-dark);
+  margin-bottom: 0.2rem;
+}
+
+.timeline-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ================== DRESS CODE Y REGALOS ================== */
+
+.dresscode-section, .gifts-section {
+  text-align: center;
+  margin-bottom: 3.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.dresscode-cartouche-svg, .gifts-cartouche-svg {
+  width: 100%;
+  max-width: 330px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(0 3px 8px rgba(212, 175, 55, 0.25));
+}
+
+.dresscode-type-badge {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.22em;
+  color: var(--color-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0.6rem;
+}
+
+.dresscode-card, .gifts-card {
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 20px;
+  padding: 2.2rem 1.6rem;
+  box-shadow: var(--shadow-sm);
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dresscode-figures-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 45px;
+  margin-bottom: 1.4rem;
+}
+
+.dresscode-figure-item {
+  text-align: center;
+}
+
+.figure-label {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-top: 6px;
+}
+
+.figure-sublabel {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Banner de Prohibición del Color Rosa (Mandato de la Quinceañera) */
+.no-pink-banner {
+  margin: 1.4rem auto 0;
+  max-width: 440px;
+  border-top: 1px solid rgba(212, 175, 55, 0.35);
+  padding-top: 1.2rem;
+}
+
+.sparkle-stars {
+  color: var(--gold-main);
+  letter-spacing: 0.4em;
+  font-size: 0.78rem;
+  margin-bottom: 0.5rem;
+}
+
+.no-pink-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-primary-dark);
+  line-height: 1.55;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Separador Botánico Floral */
+.botanical-divider-row {
+  text-align: center;
+  margin: 2.4rem auto;
+  max-width: 280px;
+}
+
+/* Mesa de Regalos */
+.gifts-icons-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+  margin-bottom: 1.4rem;
+}
+
+.gifts-message-text {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  color: var(--color-text-main);
+  line-height: 1.65;
+  margin-bottom: 0.8rem;
+}
+
+.gifts-optional-note {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+/* ================== RSVP & PASE PERSONALIZADO ================== */
+
+.rsvp-section {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.rsvp-card {
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 22px;
+  padding: 2.6rem 2rem;
+  box-shadow: var(--shadow-gold), var(--shadow-md);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.rsvp-date-limit {
+  display: inline-block;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  padding: 0.55rem 1.3rem;
+  border-radius: 30px;
+  margin-bottom: 1.6rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  text-transform: uppercase;
+}
+
+/* Banner de Pase Personalizado */
+.rsvp-personal-pass-banner {
+  background: linear-gradient(135deg, rgba(255, 248, 240, 0.95) 0%, rgba(253, 240, 243, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.8rem;
+  text-align: center;
+  box-shadow: inset 0 0 12px rgba(212, 175, 55, 0.06);
+}
+
+.rsvp-pass-chip {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.32rem 0.9rem;
+  border-radius: 20px;
+  margin-bottom: 0.65rem;
+}
+
+.rsvp-pass-note {
+  font-family: var(--font-classic);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: 0.55rem;
+  letter-spacing: 0.02em;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.92rem 1.1rem;
+  border-radius: 12px;
+  border: 1.5px solid #dfd0d5;
+  background: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  color: var(--color-text-main);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--gold-main);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+/* Opciones de asistencia */
+.attendance-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+.attendance-option-btn {
+  padding: 0.92rem 0.8rem;
+  border-radius: 12px;
+  border: 1.5px solid #ded0d5;
+  background: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  transition: all 0.25s ease;
+}
+
+.attendance-option-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.attendance-option-btn.active {
+  border-color: var(--color-primary);
+  background: #fbf0f3;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(74, 21, 37, 0.12);
+}
+
+.attendance-btn-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+/* Botón WhatsApp RSVP: Lujo y Claridad */
+.rsvp-submit-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #1b633d 0%, #0f4025 100%);
+  color: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 14px;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 1.1rem 1.6rem;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(27, 99, 61, 0.35);
+  transition: all 0.3s ease;
+  margin-top: 0.6rem;
+}
+
+.rsvp-submit-btn svg {
+  flex-shrink: 0;
+}
+
+.rsvp-submit-btn:hover {
+  background: linear-gradient(135deg, #22794a 0%, #134e2e 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(27, 99, 61, 0.45);
+}
+
+.rsvp-help-note {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 0.85rem;
+  margin-bottom: 0;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* ================== FOOTER ================== */
+
+.invitation-footer {
+  text-align: center;
+  margin-top: 4.2rem;
+  padding-bottom: 5rem;
+  color: var(--color-text-muted);
+}
+
+.footer-farewell {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.75rem, 5vw, 2.3rem);
+  color: var(--color-primary);
+  font-weight: 500;
+  line-height: 1.55;
+  margin: 0 auto 1.3rem auto;
+  max-width: 440px;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.footer-flourish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 0 auto 1.3rem auto;
+  color: var(--gold-main);
+}
+
+.footer-flourish-line {
+  width: 55px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-main), transparent);
+}
+
+.footer-flourish-heart {
+  font-family: serif;
+  font-size: 1.15rem;
+  color: var(--gold-main);
+  line-height: 1;
+}
+
+.footer-signoff {
+  font-family: var(--font-display);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.footer-signoff-intro {
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.footer-signoff-names {
+  font-size: 0.86rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.footer-signoff-family {
+  font-size: 0.86rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   ELEMENTOS FLOTANTES
+   ========================================================================== */
+
+/* Reproductor con Barras de Ondas de Audio */
+.floating-music-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1.5px solid var(--gold-main);
+  box-shadow: var(--shadow-gold), var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.floating-music-btn:hover {
+  transform: scale(1.12);
+}
+
+.floating-music-btn.playing {
+  animation: pulseGold 2s infinite;
+}
+
+.music-wave-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 16px;
+}
+
+.wave-bar {
+  width: 3px;
+  background: var(--color-primary);
+  border-radius: 3px;
+  height: 4px;
+  transition: height 0.2s ease;
+}
+
+.floating-music-btn.playing .wave-bar:nth-child(1) { animation: bounceBar 0.9s ease infinite alternate; }
+.floating-music-btn.playing .wave-bar:nth-child(2) { animation: bounceBar 0.7s ease 0.2s infinite alternate; }
+.floating-music-btn.playing .wave-bar:nth-child(3) { animation: bounceBar 0.8s ease 0.4s infinite alternate; }
+
+/* Toast */
+.toast-notice {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  z-index: 300;
+  background: #1e1e24;
+  color: #ffffff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.toast-notice.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================================================
+   ANIMACIONES
+   ========================================================================== */
+
+@keyframes sealPulse {
+  0%, 100% {
+    filter: drop-shadow(0 8px 20px rgba(74, 21, 37, 0.35)) drop-shadow(0 2px 5px rgba(0, 0, 0, 0.18));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 12px 28px rgba(74, 21, 37, 0.45)) drop-shadow(0 0 10px rgba(212, 175, 55, 0.45));
+    transform: scale(1.025);
+  }
+}
+
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 10px 30px rgba(212, 175, 55, 0.35); }
+  50% { box-shadow: 0 12px 35px rgba(212, 175, 55, 0.6); }
+}
+
+@keyframes bounceBar {
+  0% { height: 4px; }
+  100% { height: 16px; }
+}
+
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}

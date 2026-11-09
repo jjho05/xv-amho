@@ -1,0 +1,345 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 220" width="100%" height="100%">
+  <defs>
+    <!-- Filtros de Sombra y Resplandor Real -->
+    <filter id="tiaraDropShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3.5" flood-color="rgba(80, 20, 35, 0.28)"/>
+    </filter>
+
+    <!-- Gradientes de Oro Metálico Fino y Sombreado -->
+    <linearGradient id="tiaraGold" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#fff5cf"/>
+      <stop offset="16%" stop-color="#ffd56b"/>
+      <stop offset="38%" stop-color="#d4af37"/>
+      <stop offset="62%" stop-color="#aa791c"/>
+      <stop offset="84%" stop-color="#e8c261"/>
+      <stop offset="100%" stop-color="#734708"/>
+    </linearGradient>
+
+    <linearGradient id="tiaraGoldLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#faebb7"/>
+      <stop offset="70%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8a5a12"/>
+    </linearGradient>
+
+    <radialGradient id="tiaraGoldBezel" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#fff9df"/>
+      <stop offset="35%" stop-color="#e8be56"/>
+      <stop offset="75%" stop-color="#a6731e"/>
+      <stop offset="100%" stop-color="#4a2e05"/>
+    </radialGradient>
+
+    <!-- Gradientes de Cristal Fresa / Rubí Rosa de Alta Joyería -->
+    <radialGradient id="tiaraGemCenter" cx="38%" cy="32%" r="65%">
+      <stop offset="0%" stop-color="#fff0f4"/>
+      <stop offset="20%" stop-color="#fba2b8"/>
+      <stop offset="55%" stop-color="#e63b68"/>
+      <stop offset="85%" stop-color="#991137"/>
+      <stop offset="100%" stop-color="#4d0519"/>
+    </radialGradient>
+
+    <radialGradient id="tiaraGemSide" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#fff2f6"/>
+      <stop offset="25%" stop-color="#f88ca7"/>
+      <stop offset="60%" stop-color="#d82554"/>
+      <stop offset="90%" stop-color="#8a0c2e"/>
+      <stop offset="100%" stop-color="#450315"/>
+    </radialGradient>
+
+    <radialGradient id="tiaraGemDiamond" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#fedee7"/>
+      <stop offset="85%" stop-color="#e15077"/>
+      <stop offset="100%" stop-color="#8a1434"/>
+    </radialGradient>
+  </defs>
+
+  <g filter="url(#tiaraDropShadow)">
+
+    <!-- ========================================================
+         BASE DE LA TIARA (DOBLE RIEL ARQUEADO CON ENREJADO)
+         ======================================================== -->
+    <!-- Riel Superior -->
+    <path d="M 28 176 Q 250 152 472 176" fill="none" stroke="url(#tiaraGold)" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M 32 175.5 Q 250 151.5 468 175.5" fill="none" stroke="#fff9e5" stroke-width="1" opacity="0.85"/>
+
+    <!-- Riel Inferior -->
+    <path d="M 24 190 Q 250 166 476 190" fill="none" stroke="url(#tiaraGold)" stroke-width="3.6" stroke-linecap="round"/>
+    <path d="M 28 189.5 Q 250 165.5 472 189.5" fill="none" stroke="#fff9e5" stroke-width="1.1" opacity="0.85"/>
+
+    <!-- Festones / Celosía de Filigrana entre rieles -->
+    <path d="M 36 189 Q 44 177 52 189 Q 60 176 68 188 Q 76 175 84 187 Q 92 174 100 186 Q 108 173 116 185 Q 124 172 132 184 Q 140 171 148 183 Q 156 170 164 182 Q 172 169 180 181 Q 188 168 196 180 Q 204 167 212 179 Q 220 166 228 178 Q 236 166 244 177.5 Q 250 165 256 177.5 Q 264 166 272 178 Q 280 166 288 179 Q 296 167 304 180 Q 312 168 320 181 Q 328 169 336 182 Q 344 170 352 183 Q 360 171 368 184 Q 376 172 384 185 Q 392 173 400 186 Q 408 174 416 187 Q 424 175 432 188 Q 440 176 448 189 Q 456 177 464 189"
+          fill="none" stroke="url(#tiaraGold)" stroke-width="1.6" opacity="0.95"/>
+
+    <!-- Cristales y Diamantes en la Base de la Diadema -->
+    <g fill="url(#tiaraGemDiamond)" stroke="#5c3806" stroke-width="0.6">
+      <circle cx="250" cy="160" r="2.8"/>
+      <circle cx="265" cy="160.5" r="2.5"/><circle cx="235" cy="160.5" r="2.5"/>
+      <circle cx="280" cy="161.4" r="2.5"/><circle cx="220" cy="161.4" r="2.5"/>
+      <circle cx="295" cy="162.6" r="2.4"/><circle cx="205" cy="162.6" r="2.4"/>
+      <circle cx="310" cy="164.0" r="2.4"/><circle cx="190" cy="164.0" r="2.4"/>
+      <circle cx="325" cy="165.6" r="2.3"/><circle cx="175" cy="165.6" r="2.3"/>
+      <circle cx="340" cy="167.5" r="2.3"/><circle cx="160" cy="167.5" r="2.3"/>
+      <circle cx="355" cy="169.7" r="2.2"/><circle cx="145" cy="169.7" r="2.2"/>
+      <circle cx="370" cy="172.1" r="2.2"/><circle cx="130" cy="172.1" r="2.2"/>
+      <circle cx="385" cy="174.8" r="2.1"/><circle cx="115" cy="174.8" r="2.1"/>
+      <circle cx="400" cy="177.7" r="2.1"/><circle cx="100" cy="177.7" r="2.1"/>
+      <circle cx="415" cy="180.8" r="2.0"/><circle cx="85" cy="180.8" r="2.0"/>
+      <circle cx="430" cy="184.2" r="2.0"/><circle cx="70" cy="184.2" r="2.0"/>
+      <circle cx="445" cy="187.8" r="1.9"/><circle cx="55" cy="187.8" r="1.9"/>
+    </g>
+
+    <!-- Remates de Extremo de Diadema -->
+    <circle cx="26" cy="183" r="4.5" fill="url(#tiaraGoldBezel)" stroke="#5c3806" stroke-width="0.9"/>
+    <circle cx="26" cy="183" r="2.4" fill="url(#tiaraGemDiamond)"/>
+    <circle cx="474" cy="183" r="4.5" fill="url(#tiaraGoldBezel)" stroke="#5c3806" stroke-width="0.9"/>
+    <circle cx="474" cy="183" r="2.4" fill="url(#tiaraGemDiamond)"/>
+
+
+    <!-- ========================================================
+         VOLUTAS Y ARCOS BARROCOS (MITAD DERECHA)
+         ======================================================== -->
+    <defs>
+      <g id="tiara-half-v3">
+        
+        <!-- Voluta Mayor 1: Abraza el Engarce Central -->
+        <path d="M 250 152 C 262 152, 278 143, 286 128 C 293 113, 292 94, 282 78 C 275 66, 263 65, 258 73 C 253 80, 258 89, 266 88 C 273 86, 276 77, 271 71 C 269 68, 265 69, 264 72"
+              fill="none" stroke="url(#tiaraGold)" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M 252 151 C 263 151, 277 142, 284 127 C 291 112, 290 95, 280 80"
+              fill="none" stroke="#fff9e5" stroke-width="1.1" opacity="0.8"/>
+
+        <!-- Hojas de Acanto que brotan del centro -->
+        <path d="M 264 140 C 274 135, 280 123, 276 112 C 272 116, 266 124, 264 140 Z"
+              fill="url(#tiaraGold)" stroke="#5c3806" stroke-width="0.8"/>
+
+        <!-- ==============================================
+             ARCO GÓTICO 2: GEMA PRINCIPAL LATERAL 1
+             Vértice en (324, 54)
+             ============================================== -->
+        <path d="M 275 156 C 290 150, 312 134, 324 108 C 333 90, 335 68, 324 54"
+              fill="none" stroke="url(#tiaraGold)" stroke-width="3.6" stroke-linecap="round"/>
+        <path d="M 276 155 C 291 149, 311 133, 322 108 C 331 90, 333 69, 323 56"
+              fill="none" stroke="#fff9e5" stroke-width="1.1" opacity="0.8"/>
+
+        <!-- Rama Interior del Arco 2 -->
+        <path d="M 324 54 C 316 64, 303 75, 297 90 C 291 105, 293 122, 301 136 C 305 142, 307 153, 300 160"
+              fill="none" stroke="url(#tiaraGold)" stroke-width="2.6" stroke-linecap="round"/>
+
+        <!-- Voluta en la cúspide del Arco 2 -->
+        <path d="M 324 54 C 328 48, 337 46, 341 52 C 345 58, 339 66, 331 64 C 325 62, 323 56, 326 52"
+              fill="none" stroke="url(#tiaraGold)" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- Hoja de acanto interior bajo la gema 1 -->
+        <path d="M 308 140 C 314 132, 324 132, 328 140 C 324 145, 314 145, 308 140 Z"
+              fill="url(#tiaraGold)" stroke="#5c3806" stroke-width="0.7"/>
+
+        <!-- ==============================================
+             ARCO GÓTICO 3: GEMA LATERAL 2
+             Vértice en (386, 72)
+             ============================================== -->
+        <path d="M 329 162 C 347 156, 370 138, 384 116 C 392 102, 396 84, 386 72"
+              fill="none" stroke="url(#tiaraGold)" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M 330 161 C 348 155, 369 137, 382 116 C 390 102, 394 85, 385 74"
+              fill="none" stroke="#fff9e5" stroke-width="1" opacity="0.8"/>
+
+        <!-- Rama Interior del Arco 3 -->
+        <path d="M 386 72 C 378 82, 365 93, 359 108 C 353 123, 355 137, 363 149 C 367 155, 365 164, 357 167"
+              fill="none" stroke="url(#tiaraGold)" stroke-width="2.2" stroke-linecap="round"/>
+
+        <!-- Voluta en la cúspide del Arco 3 -->
+        <path d="M 386 72 C 390 66, 398 66, 400 72 C 402 78, 396 84, 390 82"
+              fill="none" stroke="url(#tiaraGold)" stroke-width="1.8" stroke-linecap="round"/>
+
+        <!-- ==============================================
+             ARCO 4: GEMA LATERAL 3 Y REMATE DE ALA
+             Vértice en (440, 104)
+             ============================================== -->
+        <path d="M 386 168 C 404 162, 424 147, 436 128 C 444 116, 446 106, 440 104"
+              fill="none" stroke="url(#tiaraGold)" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M 440 104 C 434 112, 423 121, 417 134 C 411 146, 415 158, 423 167"
+              fill="none" stroke="url(#tiaraGold)" stroke-width="2" stroke-linecap="round"/>
+
+        <path d="M 440 104 C 444 100, 452 102, 452 108 C 452 114, 446 118, 442 116"
+              fill="none" stroke="url(#tiaraGold)" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M 442 131 C 455 137, 465 147, 463 159 C 461 167, 451 169, 445 163 C 441 159, 443 151, 449 151 C 453 151, 455 155, 453 159"
+              fill="none" stroke="url(#tiaraGold)" stroke-width="1.6" stroke-linecap="round"/>
+
+
+        <!-- ==============================================
+             GEMAS Y JOYAS FACETADAS (MITAD DERECHA)
+             ============================================== -->
+
+        <!-- 1. GEMA MAYOR LATERAL 1 (X: 314, Y: 104, Rotada 16°) -->
+        <g transform="translate(314, 104) rotate(16)">
+          <ellipse cx="0" cy="0" rx="14.5" ry="22" fill="url(#tiaraGoldBezel)" stroke="#5c3806" stroke-width="1.4"/>
+          <ellipse cx="0" cy="0" rx="13" ry="20" fill="none" stroke="#fff4cf" stroke-width="0.9"/>
+          
+          <!-- 8 Garras de Oro -->
+          <circle cx="0" cy="-21" r="2.2" fill="#fff9df" stroke="#5c3806" stroke-width="0.6"/>
+          <circle cx="0" cy="21" r="2.2" fill="#fff9df" stroke="#5c3806" stroke-width="0.6"/>
+          <circle cx="-14" cy="0" r="2.2" fill="#fff9df" stroke="#5c3806" stroke-width="0.6"/>
+          <circle cx="14" cy="0" r="2.2" fill="#fff9df" stroke="#5c3806" stroke-width="0.6"/>
+          <circle cx="-10" cy="-14" r="1.6" fill="#fff9df" stroke="#5c3806" stroke-width="0.5"/>
+          <circle cx="10" cy="-14" r="1.6" fill="#fff9df" stroke="#5c3806" stroke-width="0.5"/>
+          <circle cx="-10" cy="14" r="1.6" fill="#fff9df" stroke="#5c3806" stroke-width="0.5"/>
+          <circle cx="10" cy="14" r="1.6" fill="#fff9df" stroke="#5c3806" stroke-width="0.5"/>
+
+          <ellipse cx="0" cy="0" rx="12" ry="18.5" fill="url(#tiaraGemSide)"/>
+
+          <!-- Facetas de Cristal Tallado -->
+          <polygon points="0,-17 6,-9 0,-5 -6,-9" fill="#ffffff" opacity="0.75"/>
+          <polygon points="0,-5 7,-5 10,2 0,0" fill="#ffe7ee" opacity="0.45"/>
+          <polygon points="0,-5 -7,-5 -10,2 0,0" fill="#991137" opacity="0.45"/>
+          <polygon points="0,0 8,3 0,17 -8,3" fill="#4a0416" opacity="0.65"/>
+          <ellipse cx="-3" cy="-6" rx="3.5" ry="6.5" fill="#ffffff" opacity="0.7"/>
+          <circle cx="3" cy="6" r="1.6" fill="#ffffff" opacity="0.45"/>
+        </g>
+
+        <!-- Pináculo Teardrop sobre la Gema 1 (X: 326, Y: 48, Rotado 12°) -->
+        <g transform="translate(326, 48) rotate(12)">
+          <path d="M 0 -12 C 6 -6, 7 4, 0 11 C -7 4, -6 -6, 0 -12 Z"
+                fill="url(#tiaraGemSide)" stroke="#ffd56b" stroke-width="1"/>
+          <path d="M 0 -11 C 3 -6, 4 2, 0 8 C -4 2, -3 -6, 0 -11 Z" fill="#ffffff" opacity="0.45"/>
+          <circle cx="-1" cy="-3.5" r="2" fill="#ffffff" opacity="0.9"/>
+          <circle cx="0" cy="-13" r="1.8" fill="#fff9df" stroke="#5c3806" stroke-width="0.6"/>
+        </g>
+
+
+        <!-- 2. GEMA EXTERIOR LATERAL 2 (X: 378, Y: 116, Rotada 26°) -->
+        <g transform="translate(378, 116) rotate(26)">
+          <ellipse cx="0" cy="0" rx="11.5" ry="17.5" fill="url(#tiaraGoldBezel)" stroke="#5c3806" stroke-width="1.2"/>
+          <circle cx="0" cy="-17" r="1.8" fill="#fff9df" stroke="#5c3806" stroke-width="0.5"/>
+          <circle cx="0" cy="17" r="1.8" fill="#fff9df" stroke="#5c3806" stroke-width="0.5"/>
+          <circle cx="-11" cy="0" r="1.8" fill="#fff9df" stroke="#5c3806" stroke-width="0.5"/>
+          <circle cx="11" cy="0" r="1.8" fill="#fff9df" stroke="#5c3806" stroke-width="0.5"/>
+
+          <ellipse cx="0" cy="0" rx="9.5" ry="14.5" fill="url(#tiaraGemSide)"/>
+          <polygon points="0,-13 5,-6 0,-3 -5,-6" fill="#ffffff" opacity="0.75"/>
+          <polygon points="0,0 6,2 0,13 -6,2" fill="#4a0416" opacity="0.6"/>
+          <ellipse cx="-2.2" cy="-4.5" rx="2.6" ry="5" fill="#ffffff" opacity="0.7"/>
+        </g>
+
+        <!-- Pináculo Teardrop sobre la Gema 2 (X: 388, Y: 66, Rotado 22°) -->
+        <g transform="translate(388, 66) rotate(22)">
+          <path d="M 0 -10 C 5 -5, 6 3, 0 9 C -6 3, -5 -5, 0 -10 Z"
+                fill="url(#tiaraGemSide)" stroke="#ffd56b" stroke-width="0.9"/>
+          <circle cx="-0.8" cy="-2.5" r="1.6" fill="#ffffff" opacity="0.9"/>
+          <circle cx="0" cy="-11" r="1.5" fill="#fff9df" stroke="#5c3806" stroke-width="0.5"/>
+        </g>
+
+
+        <!-- 3. GEMA LATERAL 3 (X: 432, Y: 134, Rotada 38°) -->
+        <g transform="translate(432, 134) rotate(38)">
+          <ellipse cx="0" cy="0" rx="8.5" ry="13" fill="url(#tiaraGoldBezel)" stroke="#5c3806" stroke-width="1"/>
+          <circle cx="0" cy="-13" r="1.5" fill="#fff9df" stroke="#5c3806" stroke-width="0.4"/>
+          <circle cx="0" cy="13" r="1.5" fill="#fff9df" stroke="#5c3806" stroke-width="0.4"/>
+          <circle cx="-8" cy="0" r="1.5" fill="#fff9df" stroke="#5c3806" stroke-width="0.4"/>
+          <circle cx="8" cy="0" r="1.5" fill="#fff9df" stroke="#5c3806" stroke-width="0.4"/>
+
+          <ellipse cx="0" cy="0" rx="7" ry="11" fill="url(#tiaraGemSide)"/>
+          <polygon points="0,-10 3.5,-4 0,-2 -3.5,-4" fill="#ffffff" opacity="0.75"/>
+          <circle cx="-1.5" cy="-3" r="1.8" fill="#ffffff" opacity="0.75"/>
+        </g>
+
+        <!-- Pináculo sobre Gema 3 (X: 440, Y: 98, Rotado 30°) -->
+        <g transform="translate(440, 98) rotate(30)">
+          <path d="M 0 -8 C 4 -4, 5 2, 0 7 C -5 2, -4 -4, 0 -8 Z"
+                fill="url(#tiaraGemSide)" stroke="#ffd56b" stroke-width="0.8"/>
+          <circle cx="-0.6" cy="-1.8" r="1.3" fill="#ffffff" opacity="0.85"/>
+        </g>
+
+        <!-- 4. GEMA DEL EXTREMO DERECHO (X: 466, Y: 152) -->
+        <circle cx="466" cy="152" r="4.8" fill="url(#tiaraGoldBezel)" stroke="#5c3806" stroke-width="0.9"/>
+        <circle cx="466" cy="152" r="3.4" fill="url(#tiaraGemSide)"/>
+        <circle cx="465" cy="151" r="1.3" fill="#ffffff" opacity="0.9"/>
+
+
+        <!-- CRISTALES ROSAS SECUNDARIOS ENGARZADOS -->
+        <circle cx="272" cy="68" r="3.4" fill="url(#tiaraGemDiamond)" stroke="#5c3806" stroke-width="0.7"/>
+        <circle cx="271" cy="67" r="1.2" fill="#ffffff" opacity="0.95"/>
+
+        <circle cx="294" cy="92" r="3.2" fill="url(#tiaraGemDiamond)" stroke="#5c3806" stroke-width="0.7"/>
+        <circle cx="346" cy="112" r="3.0" fill="url(#tiaraGemDiamond)" stroke="#5c3806" stroke-width="0.7"/>
+        <circle cx="406" cy="134" r="2.8" fill="url(#tiaraGemDiamond)" stroke="#5c3806" stroke-width="0.7"/>
+        <circle cx="448" cy="146" r="2.5" fill="url(#tiaraGemDiamond)" stroke="#5c3806" stroke-width="0.6"/>
+
+      </g>
+    </defs>
+
+    <!-- RENDERIZAR MITAD DERECHA -->
+    <use href="#tiara-half-v3"/>
+    <!-- RENDERIZAR MITAD IZQUIERDA -->
+    <use href="#tiara-half-v3" transform="translate(500, 0) scale(-1, 1)"/>
+
+
+    <!-- ========================================================
+         GEMA CENTRAL IMPERIAL (GRAN MARQUISE FACETADA)
+         Centro X = 250, Y = 102
+         ======================================================== -->
+    <!-- Engarce de Oro Biselado -->
+    <path d="M 250 52 C 276 52, 288 74, 288 102 C 288 132, 276 152, 250 152 C 224 152, 212 132, 212 102 C 212 74, 224 52, 250 52 Z"
+          fill="url(#tiaraGoldBezel)" stroke="#5c3806" stroke-width="2.6"/>
+    <path d="M 250 55 C 273 55, 284 76, 284 102 C 284 129, 273 148, 250 148 C 227 148, 216 129, 216 102 C 216 76, 227 55, 250 55 Z"
+          fill="none" stroke="#fff5d1" stroke-width="1.5"/>
+
+    <!-- 8 Garras de Oro con Perlas de Remate -->
+    <circle cx="250" cy="53" r="3.2" fill="#fff9df" stroke="#5c3806" stroke-width="0.8"/>
+    <circle cx="250" cy="151" r="3.2" fill="#fff9df" stroke="#5c3806" stroke-width="0.8"/>
+    <circle cx="213" cy="102" r="3.2" fill="#fff9df" stroke="#5c3806" stroke-width="0.8"/>
+    <circle cx="287" cy="102" r="3.2" fill="#fff9df" stroke="#5c3806" stroke-width="0.8"/>
+    <circle cx="224" cy="71" r="2.5" fill="#fff9df" stroke="#5c3806" stroke-width="0.6"/>
+    <circle cx="276" cy="71" r="2.5" fill="#fff9df" stroke="#5c3806" stroke-width="0.6"/>
+    <circle cx="224" cy="133" r="2.5" fill="#fff9df" stroke="#5c3806" stroke-width="0.6"/>
+    <circle cx="276" cy="133" r="2.5" fill="#fff9df" stroke="#5c3806" stroke-width="0.6"/>
+
+    <!-- Cuerpo de la Gema Central -->
+    <path d="M 250 58 C 271 58, 281 78, 281 102 C 281 127, 271 146, 250 146 C 229 146, 219 127, 219 102 C 219 78, 229 58, 250 58 Z"
+          fill="url(#tiaraGemCenter)"/>
+
+    <!-- Facetas del Cristal Brillante Imperial -->
+    <polygon points="250,60 263,79 250,87 237,79" fill="#ffffff" opacity="0.75"/>
+    <polygon points="250,60 272,68 278,89 263,79" fill="#ffe7ee" opacity="0.5"/>
+    <polygon points="250,60 228,68 222,89 237,79" fill="#ffb8cc" opacity="0.55"/>
+    <polygon points="250,87 265,95 267,111 250,119 233,111 235,95" fill="#ffccd8" opacity="0.75"/>
+    <polygon points="250,89 262,96 263,109 250,116 237,109 238,96" fill="#ffffff" opacity="0.45"/>
+    <polygon points="250,119 267,111 276,126 250,144" fill="#750621" opacity="0.65"/>
+    <polygon points="250,119 233,111 224,126 250,144" fill="#990f33" opacity="0.55"/>
+    <polygon points="250,119 259,133 250,144 241,133" fill="#4d0315" opacity="0.75"/>
+    <!-- Destellos Especulares -->
+    <ellipse cx="243" cy="84" rx="5.2" ry="10" fill="#ffffff" opacity="0.8" transform="rotate(-15 243 84)"/>
+    <circle cx="258" cy="112" r="2.4" fill="#ffffff" opacity="0.7"/>
+    <circle cx="236" cy="102" r="1.6" fill="#ffffff" opacity="0.55"/>
+
+
+    <!-- ========================================================
+         PINÁCULO REAL EN CÚSPIDE
+         Centro X = 250, Y = 12..52
+         ======================================================== -->
+    <path d="M 244 52 C 244 44, 240 38, 250 38 C 260 38, 256 44, 256 52 Z"
+          fill="url(#tiaraGold)" stroke="#5c3806" stroke-width="1.1"/>
+    <path d="M 250 38 C 258 34, 268 28, 266 18 C 264 10, 255 12, 250 22 C 245 12, 236 10, 234 18 C 232 28, 242 34, 250 38 Z"
+          fill="url(#tiaraGold)" stroke="#5c3806" stroke-width="1.3"/>
+    <path d="M 250 36 C 256 32, 264 27, 263 19 C 262 13, 256 14, 250 22"
+          fill="none" stroke="#fff9e5" stroke-width="0.9" opacity="0.85"/>
+
+    <!-- Gema Teardrop en Cúspide (X: 250, Y: 26) -->
+    <path d="M 250 15 C 257 22, 259 32, 250 38 C 241 32, 243 22, 250 15 Z"
+          fill="url(#tiaraGemCenter)" stroke="#ffd56b" stroke-width="1.1"/>
+    <path d="M 250 17 C 254 22, 255 29, 250 34 C 245 29, 246 22, 250 17 Z" fill="#ffffff" opacity="0.4"/>
+    <circle cx="249" cy="23" r="2.2" fill="#ffffff" opacity="0.9"/>
+    <!-- Esfera Imperial en lo más alto -->
+    <circle cx="250" cy="11" r="3" fill="url(#tiaraGoldBezel)" stroke="#5c3806" stroke-width="0.8"/>
+    <circle cx="250" cy="11" r="1.5" fill="#ffffff" opacity="0.95"/>
+
+
+    <!-- ========================================================
+         PUNTA DE DIAMANTE EN LA BASE
+         Centro X = 250, Y = 153..178
+         ======================================================== -->
+    <polygon points="250,153 260,165 250,179 240,165" fill="url(#tiaraGoldBezel)" stroke="#5c3806" stroke-width="1.2"/>
+    <polygon points="250,155 258,165 250,176 242,165" fill="url(#tiaraGemCenter)"/>
+    <polygon points="250,155 255,164 250,173 245,164" fill="#ffffff" opacity="0.55"/>
+    <circle cx="250" cy="164" r="1.8" fill="#ffffff" opacity="0.95"/>
+
+  </g>
+</svg>

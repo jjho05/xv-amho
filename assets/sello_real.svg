@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <!-- Filtros de Sombra y Relieve 3D de Cera Real -->
+    <filter id="sealDepth" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="5.5" stdDeviation="5.5" flood-color="rgba(65, 18, 30, 0.4)"/>
+    </filter>
+
+    <filter id="crownRelief" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1.4" dy="2.4" stdDeviation="1.6" flood-color="rgba(40, 22, 4, 0.72)"/>
+    </filter>
+
+    <!-- Gradientes de Cera de Oro Metálico -->
+    <!-- Borde Exterior Orgánico (Luz cálida desde arriba a la izquierda) -->
+    <radialGradient id="waxOuterRim" cx="35%" cy="30%" r="68%">
+      <stop offset="0%" stop-color="#fff8dc"/>
+      <stop offset="16%" stop-color="#f8d87a"/>
+      <stop offset="38%" stop-color="#d4af37"/>
+      <stop offset="68%" stop-color="#aa7920"/>
+      <stop offset="88%" stop-color="#734b08"/>
+      <stop offset="100%" stop-color="#4a2c04"/>
+    </radialGradient>
+
+    <!-- Bisel Elevado de la Cama -->
+    <linearGradient id="raisedBevel" x1="20%" y1="15%" x2="80%" y2="85%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="22%" stop-color="#fff8e5"/>
+      <stop offset="48%" stop-color="#dfb44a"/>
+      <stop offset="78%" stop-color="#996a14"/>
+      <stop offset="100%" stop-color="#4d2f03"/>
+    </linearGradient>
+
+    <!-- Cama Central Hundida (Acabado Satinado Oro Antiguo) -->
+    <radialGradient id="waxBed" cx="42%" cy="38%" r="62%">
+      <stop offset="0%" stop-color="#cda446"/>
+      <stop offset="42%" stop-color="#af8228"/>
+      <stop offset="80%" stop-color="#7e5411"/>
+      <stop offset="100%" stop-color="#4a2c04"/>
+    </radialGradient>
+
+    <!-- Corona en Altorrelieve 3D (Oro Metálico Esculpido) -->
+    <linearGradient id="crownGold3D" x1="25%" y1="15%" x2="75%" y2="85%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="14%" stop-color="#fff5cc"/>
+      <stop offset="32%" stop-color="#f7d472"/>
+      <stop offset="65%" stop-color="#ca982e"/>
+      <stop offset="86%" stop-color="#8a5a12"/>
+      <stop offset="100%" stop-color="#543103"/>
+    </linearGradient>
+  </defs>
+
+  <g filter="url(#sealDepth)">
+
+    <!-- ========================================================
+         1. BORDE ORGÁNICO DE CERA DERRETIDA (FLUIDO NATURAL)
+         ======================================================== -->
+    <path d="M 100 12 
+             C 126 11, 146 17, 163 31
+             C 178 43, 189 60, 192 82
+             C 195 102, 188 122, 180 140
+             C 172 157, 159 171, 141 181
+             C 124 190, 105 192, 85 189
+             C 65 186, 46 176, 33 161
+             C 18 146, 10 126, 11 105
+             C 12 84, 21 63, 36 46
+             C 52 28, 74 13, 100 12 Z"
+          fill="url(#waxOuterRim)"/>
+
+    <!-- Resaltes de Brillo en el Labio Superior Izquierdo -->
+    <path d="M 45 44 C 62 28, 82 20, 106 19 C 128 18, 148 26, 164 38"
+          stroke="#fffde8" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.65"/>
+    <path d="M 52 50 C 66 36, 84 29, 105 28 C 124 27, 142 34, 156 44"
+          stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.85"/>
+
+    <!-- ========================================================
+         2. LABIO Y REBORDE CIRCULAR INTERIOR
+         ======================================================== -->
+    <circle cx="100" cy="101.5" r="75.5" fill="none" stroke="#3d2102" stroke-width="2.6" opacity="0.75"/>
+    <circle cx="99.5" cy="99.5" r="74" fill="none" stroke="url(#raisedBevel)" stroke-width="4"/>
+    <circle cx="99" cy="98.5" r="73.5" fill="none" stroke="#fff9e5" stroke-width="1.2" opacity="0.9"/>
+
+    <!-- ========================================================
+         3. CAMA CIRCULAR HUNDIDA / GRABADO DE LA MONEDA
+         ======================================================== -->
+    <circle cx="100" cy="100" r="71" fill="url(#waxBed)"/>
+    <!-- Sombra de profundidad interior superior -->
+    <path d="M 33 80 A 71 71 0 0 1 167 80 A 71 71 0 0 0 33 80 Z" fill="#2d1702" opacity="0.38"/>
+    <circle cx="100" cy="100" r="70" fill="none" stroke="#4a2c04" stroke-width="1.2" opacity="0.6"/>
+
+
+    <!-- ========================================================
+         4. CORONA REAL DE 5 PICAS (SILUETA EXACTA DE CANVA)
+         Centro X = 100, Y = 105
+         ======================================================== -->
+    <g filter="url(#crownRelief)">
+
+      <!-- BASE DE LA CORONA: DOBLE RIEL CURVADO CON CONVEXIDAD INFERIOR -->
+      <!-- Riel Inferior -->
+      <path d="M 58 141 Q 100 146 142 141 L 142 144.5 Q 100 149.5 58 144.5 Z"
+            fill="url(#crownGold3D)" stroke="#4a2c04" stroke-width="0.8"/>
+      <!-- Brillo del riel inferior -->
+      <path d="M 59 141.5 Q 100 146.5 141 141.5" stroke="#ffffff" stroke-width="0.9" fill="none" opacity="0.9"/>
+
+      <!-- Riel Superior -->
+      <path d="M 59 133 Q 100 138 141 133 L 141 136.5 Q 100 141.5 59 136.5 Z"
+            fill="url(#crownGold3D)" stroke="#4a2c04" stroke-width="0.8"/>
+      <!-- Brillo del riel superior -->
+      <path d="M 60 133.5 Q 100 138.5 140 133.5" stroke="#ffffff" stroke-width="0.9" fill="none" opacity="0.9"/>
+
+      <!-- Fila de 5 Perlas / Joyas en la Diadema de la Corona -->
+      <circle cx="100" cy="123" r="3.2" fill="url(#crownGold3D)" stroke="#4a2c04" stroke-width="0.7"/>
+      <circle cx="82" cy="124.5" r="2.8" fill="url(#crownGold3D)" stroke="#4a2c04" stroke-width="0.7"/>
+      <circle cx="118" cy="124.5" r="2.8" fill="url(#crownGold3D)" stroke="#4a2c04" stroke-width="0.7"/>
+      <circle cx="66" cy="127" r="2.3" fill="url(#crownGold3D)" stroke="#4a2c04" stroke-width="0.7"/>
+      <circle cx="134" cy="127" r="2.3" fill="url(#crownGold3D)" stroke="#4a2c04" stroke-width="0.7"/>
+      <!-- Destellos de luz en las perlas -->
+      <circle cx="99.2" cy="122" r="1.1" fill="#ffffff" opacity="0.95"/>
+      <circle cx="81.2" cy="123.5" r="1.0" fill="#ffffff" opacity="0.95"/>
+      <circle cx="117.2" cy="123.5" r="1.0" fill="#ffffff" opacity="0.95"/>
+      <circle cx="65.3" cy="126.2" r="0.8" fill="#ffffff" opacity="0.95"/>
+      <circle cx="133.3" cy="126.2" r="0.8" fill="#ffffff" opacity="0.95"/>
+
+
+      <!-- CUERPO ESCULPIDO DE LAS 5 PICAS ABIERTAS EN CORONETE -->
+      <path d="M 59 133
+               C 56 122, 48 108, 42 92
+               C 40 86, 44 82, 50 83
+               C 55 84, 57 90, 56 96
+               C 58 104, 63 112, 66 114
+               C 68 110, 71 96, 74 80
+               C 75 73, 81 72, 85 77
+               C 87 81, 86 88, 84 94
+               C 83 100, 87 108, 90 109
+               C 92 104, 91 88, 91 72
+               C 92 62, 96 55, 100 48
+               C 104 55, 108 62, 109 72
+               C 109 88, 108 104, 110 109
+               C 113 108, 117 100, 116 94
+               C 114 88, 113 81, 115 77
+               C 119 72, 125 73, 126 80
+               C 129 96, 132 110, 134 114
+               C 137 112, 142 104, 144 96
+               C 143 90, 145 84, 150 83
+               C 156 82, 160 86, 158 92
+               C 152 108, 144 122, 141 133
+               Q 100 138 59 133 Z"
+            fill="url(#crownGold3D)" stroke="#4a2c04" stroke-width="1.3" stroke-linejoin="round"/>
+
+      <!-- DETALLES DE LAS CÚSPIDES (TRÉBOLES Y FLEUR IMPERIAL) -->
+      <!-- Pica Central (Pica 3): Cúpula Fleur con Diamante -->
+      <polygon points="100,46 104.5,54 100,63 95.5,54" fill="url(#crownGold3D)" stroke="#4a2c04" stroke-width="0.9"/>
+      <polygon points="100,47 103.5,54 100,61 96.5,54" fill="#ffffff" opacity="0.65"/>
+      <circle cx="100" cy="46" r="1.6" fill="#ffffff" opacity="0.95"/>
+
+      <!-- Pica 2 (Trefoil Izquierdo): Círculo de Remate -->
+      <circle cx="79" cy="74" r="3.6" fill="url(#crownGold3D)" stroke="#4a2c04" stroke-width="0.8"/>
+      <circle cx="78" cy="73" r="1.3" fill="#ffffff" opacity="0.95"/>
+
+      <!-- Pica 4 (Trefoil Derecho): Círculo de Remate -->
+      <circle cx="121" cy="74" r="3.6" fill="url(#crownGold3D)" stroke="#4a2c04" stroke-width="0.8"/>
+      <circle cx="120" cy="73" r="1.3" fill="#ffffff" opacity="0.95"/>
+
+      <!-- Picas 1 y 5 (Alas Exteriores Abiertas): Perlas de Remate -->
+      <circle cx="47" cy="85" r="3.4" fill="url(#crownGold3D)" stroke="#4a2c04" stroke-width="0.7"/>
+      <circle cx="46" cy="84" r="1.2" fill="#ffffff" opacity="0.95"/>
+
+      <circle cx="153" cy="85" r="3.4" fill="url(#crownGold3D)" stroke="#4a2c04" stroke-width="0.7"/>
+      <circle cx="152" cy="84" r="1.2" fill="#ffffff" opacity="0.95"/>
+
+      <!-- LÍNEAS DE BRILLO ESPECULAR Y RELIEVE (Luz desde arriba a la izquierda) -->
+      <!-- Columna central -->
+      <path d="M 97.5 56 L 100 48 L 102.5 56 L 101 68 C 101 80, 100 95, 100 106"
+            stroke="#ffffff" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.9"/>
+
+      <!-- Brazo izquierdo exterior -->
+      <path d="M 49 90 C 53 104, 59 116, 61 128"
+            stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.85"/>
+
+      <!-- Brazo intermedio izquierdo -->
+      <path d="M 78 80 C 76 90, 74 100, 76 108"
+            stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.85"/>
+
+      <!-- Ranura grabada central -->
+      <path d="M 100 70 L 100 118" stroke="#4a2c04" stroke-width="1.1" opacity="0.45"/>
+
+    </g>
+
+    <!-- Resplandor Dorado General de Cera Fresca -->
+    <circle cx="68" cy="62" r="44" fill="#fff9df" opacity="0.14"/>
+
+  </g>
+</svg>
