@@ -57,10 +57,10 @@ const DEFAULT_EVENT_DATA = {
   // Itinerario oficial coordinado
   itinerario: [
     { hora: "6:00 PM", titulo: "Ceremonia Religiosa", desc: "Anexo Grand Royal · Misa de acción de gracias" },
-    { hora: "7:00 PM", titulo: "Recepción & Bienvenida", desc: "Salón Camelia · Asignación de mesas y cóctel" },
-    { hora: "8:00 PM", titulo: "Presentación & Vals de Honor", desc: "El momento más esperado junto a mi familia" },
-    { hora: "9:00 PM", titulo: "Cena de Gala", desc: "Banquete en honor a Argelia Margarita" },
-    { hora: "10:00 PM", titulo: "Brindis & Apertura de Pista", desc: "Música, sorpresas y a celebrar toda la noche" }
+    { hora: "7:00 PM", titulo: "Recepción & Bienvenida", desc: "Salón Camelia · Asignación de mesas y bienvenida" },
+    { hora: "7:30 PM", titulo: "Presentación y Vals", desc: "El momento más esperado junto a mi familia" },
+    { hora: "8:00 PM", titulo: "Cena de Gala", desc: "Banquete en honor a Argelia Margarita" },
+    { hora: "9:00 PM", titulo: "Apertura de Pista", desc: "Música, brindis y a celebrar toda la noche" }
   ],
 
   // Código de Vestimenta Oficial
@@ -106,7 +106,7 @@ const DEFAULT_EVENT_DATA = {
 };
 
 function getSavedEventData() {
-  const saved = localStorage.getItem("argelia_xv_data_v5");
+  const saved = localStorage.getItem("argelia_xv_data_v6");
   if (saved) {
     try {
       return { ...DEFAULT_EVENT_DATA, ...JSON.parse(saved) };
@@ -118,5 +118,5 @@ function getSavedEventData() {
 }
 
 function persistEventData(data) {
-  localStorage.setItem("argelia_xv_data_v5", JSON.stringify(data));
+  localStorage.setItem("argelia_xv_data_v6", JSON.stringify(data));
 }
