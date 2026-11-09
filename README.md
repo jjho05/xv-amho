@@ -22,9 +22,6 @@ Invitación digital interactiva de alta gama para los XV años de **Argelia Marg
 2. **Tarjeta Digital en Imagen (`invitacion_argelia_xv.png`)**:
    - Imagen en alta resolución (proporción 9:16) ideal para enviar como foto por WhatsApp o publicar en Estados e Historias de Instagram.
 
-3. **Invitación en PDF Imprimible (`invitacion_argelia_xv.pdf`)**:
-   - Documento vectorial listo para imprimir con calidad de imprenta.
-
 ---
 
 ## 🚀 Cómo verla en tu computadora ahora mismo
