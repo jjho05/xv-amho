@@ -505,7 +505,6 @@ function initRSVPForm() {
 
       const mensaje = `¡Hola! Confirmo mi respuesta para los XV Años de *${eventData.quinceanera.nombre} ${eventData.quinceanera.apellidos}*:\n\n` +
         `👤 *Invitado:* ${guestName}\n` +
-        `🎟️ *Pases:* 1 lugar\n` +
         `✨ *Confirmación:* ${estadoTexto}\n\n` +
         `¡Muchas felicidades!`;
 
