@@ -509,7 +509,13 @@ function initRSVPForm() {
         `✨ *Confirmación:* ${estadoTexto}\n\n` +
         `¡Muchas felicidades!`;
 
-      const urlWhatsApp = `https://wa.me/${eventData.rsvp.telefonoWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+      // Formatear y asegurar código de país para México (52 + 10 dígitos)
+      let phone = (eventData.rsvp.telefonoWhatsApp || "528332315716").replace(/\D/g, "");
+      if (phone.length === 10) {
+        phone = "52" + phone;
+      }
+
+      const urlWhatsApp = `https://wa.me/${phone}?text=${encodeURIComponent(mensaje)}`;
 
       if (attendanceConfirmed) {
         triggerConfetti();

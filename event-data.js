@@ -89,7 +89,7 @@ const DEFAULT_EVENT_DATA = {
 
   // Confirmación de Asistencia (RSVP por WhatsApp)
   rsvp: {
-    telefonoWhatsApp: "", // Se llena en el editor o directo
+    telefonoWhatsApp: "528332315716", // WhatsApp de mamá (Tampico: 833 231 5716)
     fechaLimite: "10 de Diciembre de 2026",
     textoBoton: "Confirmar Asistencia por WhatsApp"
   },
